@@ -28,7 +28,7 @@
             return roundedToHundredth((double) (y2 - y1) / (x2 - x1));
         }
 
-        public String linearEquation() {
+        public String equation() {
             int top = y2 - y1;
             int bottom = x2 - x1;
             String yIntercept = String.valueOf(yIntercept());
@@ -72,7 +72,7 @@
 
         public String lineInfo() {
             String getLineInfo = "The two points are: " + "(" + x1 + ", " + y1 + ")" + " and " + "(" + x2 + ", " + y2 + ")" + "\n";
-            getLineInfo += "The equation of the line between these points is: " + linearEquation() + "\n";
+            getLineInfo += "The equation of the line between these points is: " + equation() + "\n";
             getLineInfo += "The slope of this line is: " + slope() + "\n";
             getLineInfo += "The y-intercept of this line is: " + yIntercept() + "\n";
             getLineInfo += "The distance between the two points is: " + distance();
