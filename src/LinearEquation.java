@@ -1,10 +1,13 @@
 
     public class LinearEquation {
+
+        // instance variables
         private int x1;
         private int y1;
         private int x2;
         private int y2;
 
+        // linearEquation constructor
         public LinearEquation(int x1, int y1, int x2, int y2) {
             this.x1 = x1;
             this.y1 = y1;
@@ -12,28 +15,34 @@
             this.y2 = y2;
         }
 
+        // roundedToHundreth method
         public double roundedToHundredth(double toRound) {
             return (double) Math.round(toRound * 100) / 100;
         }
 
+        // y-intercept method
         public double yIntercept() {
             return roundedToHundredth(y1 - slope() * x1);
         }
 
+        // distance method
         public double distance() {
             return roundedToHundredth(Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)));
         }
 
+        // slope method
         public double slope() {
             return roundedToHundredth((double) (y2 - y1) / (x2 - x1));
         }
 
+        // equation method
         public String equation() {
             int top = y2 - y1;
             int bottom = x2 - x1;
             String yIntercept = String.valueOf(yIntercept());
             String slope = top + "/" + bottom + "x ";
 
+            // if slope is a whole number or not
             if (((double) top / bottom) % 1 == 0) {
                 slope = top / bottom + "x ";
                 if (top / bottom == 1) {
@@ -52,6 +61,7 @@
                 }
             }
 
+            // if there is no slope
             if (yIntercept() > 0 && (double) top / bottom != 0) {
                 yIntercept = "+ " + yIntercept;
             } else if (yIntercept() < 0 && (double) top / bottom != 0) {
@@ -64,12 +74,14 @@
             return "y = " + slope + yIntercept;
         }
 
+        // new x value
         public String coordinateForX(double xValue) {
             double x = roundedToHundredth(xValue);
             double y = roundedToHundredth(slope() * xValue + yIntercept());
             return "(" + x + ", " + y + ")";
         }
 
+        // lineInfo method
         public String lineInfo() {
             String getLineInfo = "The two points are: " + "(" + x1 + ", " + y1 + ")" + " and " + "(" + x2 + ", " + y2 + ")" + "\n";
             getLineInfo += "The equation of the line between these points is: " + equation() + "\n";

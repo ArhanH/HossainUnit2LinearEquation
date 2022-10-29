@@ -11,11 +11,13 @@ public class LinearEquationRunner {
         System.out.print("Enter second coordinate: ");
         String coordinate2 = myScanner.nextLine();
 
+        // parseInt coordinate
         int x1 = Integer.parseInt(coordinate1.substring(coordinate1.indexOf("(") + 1,coordinate1.indexOf(",")));
         int y1 = Integer.parseInt(coordinate1.substring(coordinate1.indexOf(" ") + 1, coordinate1.indexOf(")")));
         int x2 = Integer.parseInt(coordinate2.substring(coordinate2.indexOf("(") + 1, coordinate2.indexOf(",")));
         int y2 = Integer.parseInt(coordinate2.substring(coordinate2.indexOf(" ") + 1, coordinate2.indexOf(")")));
 
+        // if coordinates are on vertical lines or not
         if(x1 == x2)
         {
             System.out.println("Coordinates are on vertical lines x = " + x1);
