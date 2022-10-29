@@ -12,8 +12,8 @@
             this.y2 = y2;
         }
 
-        public double roundedToHundredth(double roundNum) {
-            return (double) Math.round(roundNum * 100) / 100;
+        public double roundedToHundredth(double toRound) {
+            return (double) Math.round(toRound * 100) / 100;
         }
 
         public double yIntercept() {
